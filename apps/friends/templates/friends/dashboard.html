@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Dashboard</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'login/style.css' %}">
+    </head>
+    <body>
+        <div class = "wrapper2">
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+            <div class = "hello">
+                <h1>Hello, {{user.name}}!</h1>
+                <h3>Here is the list of your friends:</h3>
+                <h3>
+                    <table border="1px">
+                        {% if user.friend.all.count == 0 %}
+                            <p>You currently have no friends.</p>
+                        {% else %}
+                            <tr>
+                                <th class="th">Alias</th>
+                                <th class="th">Action</th>
+                            </tr>
+                        {% for user in user.friend.all %}
+                            <tr>
+                                <td>{{user.alias}}</td>
+                                <td><a href = "/user/{{user.id}}">View Profile</a> | <a href = "/remove/{{user.id}}">Remove Friend</a></td>
+                            </tr>
+                        {% endfor %}
+                        {% endif %}
+                    </table>
+                </h3>
+                <h3>Other Users not on your friend's list:</h3>
+                <h3>
+                    {% if user2.count == 0 %}
+                        <p>Everyone is your friend!</p>
+                    {% else %}
+                    <table border="1px">
+                    <tr>
+                        <th class="th">Alias</th>
+                        <th class="th">Action</th>
+                    </tr>
+                        {% for user in user2 %}
+                            <tr>
+                                <td><a href = "/user/{{user.id}}">{{user.alias}}</a></td>
+                                <td>
+                                    <form action = "/addFriend/{{user.id}}" method = "POST">
+                                        {%csrf_token%}
+                                        <input type = "hidden" name = "user_id" value = {{user.id}}>
+                                        <input style = "background-color:rgb(216, 79, 216)" type = "submit" value = "Add Friend">
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        {% endif %}
+                    </table>
+                </h3>
+                <h3 style = "margin-bottom:0"><a href = "/logout">Logout</a></h3>
+            </div>
+        </div>
+    </body>
+</html>

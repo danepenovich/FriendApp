@@ -1,0 +1,111 @@
+*{
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+}
+
+.wrapper{
+    width: 400px;
+}
+
+.reg{
+    width: 300px;
+    height: 380px;
+    border: solid 2px black;
+    padding: 0 10px 10px 20px;
+    background: lightblue;
+    background: linear-gradient(#ff89c0, rgb(33, 182, 223));
+    display:inline-block;
+    vertical-align:top;
+    margin:0 0 10px 0;
+}
+
+.reg2{
+    width: 300px;
+    height: 200px;
+    border: solid 2px black;
+    padding: 0 10px 10px 20px;
+    background: lightblue;
+    background: linear-gradient(#ff89c0, rgb(33, 182, 223));
+    display:inline-block;
+    vertical-align:top;
+    margin:0 0 10px 0;
+}
+
+.first{
+    margin: 0 0 5px 48px;
+}
+
+.last{
+    margin: 10px 0 0 11px;
+}
+
+.alias{
+    margin: 10px 0 5px 53px;
+}
+
+.email{
+    margin: 10px 0 5px 49px;
+}
+
+.pw{
+    margin: 10px 0 0 16px;
+}
+
+.pwm{
+    margin: 5px 0 0 20px;
+    font-size:12px;
+}
+
+.cpw{
+    margin: 10px 0 5px 0;
+}
+
+.dob{
+    margin: 15px 0 0 34px;
+}
+
+input{
+    display:inline-block;
+    border: solid 1px black;
+}
+
+.regbut{
+    font-size: 18px;
+    height: 30px;
+    width: 90px;
+    margin: 15px 0 0 0;
+    background-color:rgb(216, 79, 216);
+}
+
+.cat{
+    display:inline-block;
+    width: 310px; 
+}
+
+.cat, img{
+    width: 332px; 
+    height: 300px;
+}
+
+.wrapper2{
+    width: 800px;
+}
+
+.hello{
+    border:solid 1px black;
+    width: 500px;
+    padding: 0 10px 20px 20px;
+    background: lightblue;
+    background: linear-gradient(#ff89c0, rgb(33, 182, 223));
+    margin: 0 0 20px 0;
+}
+
+.hello2{
+    border:solid 1px black;
+    width: 400px;
+    padding: 0 10px 10px 20px;
+    background: lightblue;
+    background: linear-gradient(#ff89c0, rgb(33, 182, 223));
+    margin: 0 0 20px 0;
+    overflow-wrap: break-word;
+}

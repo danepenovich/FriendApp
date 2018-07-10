@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>User Page</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'login/style.css' %}">
+    </head>
+    <body>  
+        <div class = "hello2">
+            <h1>{{user.alias}}'s Profile</h1>
+            <h3>Name: {{user.name}}</h3>
+            <h3>Email Address: {{user.email}}</h3>
+            <p><a href = "/dashboard">Go back</a></p>
+            <p><a href = "/logout">Logout</a></p>
+        </div>
+    </body>
+</html>
